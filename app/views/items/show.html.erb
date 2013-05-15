@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Serial:</b>
+  <%= @item.serial %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @item.site.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @item.location.name %>
+</p>
+
+<p>
+  <b>Stockable:</b>
+  <%= @item.stockable %>
+</p>
+
+<p>
+  <b>Itype:</b>
+  <%= @item.itype.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

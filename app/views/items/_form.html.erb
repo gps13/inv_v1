@@ -1,0 +1,42 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :site_id %><br />
+<%= collection_select(:item, :site_id, Site.all, :id, :name, :prompt => true) %>
+<%= link_to 'New Site', new_site_path %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+
+<%= collection_select(:item, :location_id, Location.all, :id, :name, :prompt => true) %>
+<%= link_to 'New Location', new_location_path %>
+</div>
+  <div class="field">
+    <%= f.label :itype_id %><br />
+<%= collection_select(:item, :itype_id, Itype.all, :id, :name, :prompt => true) %>
+<%= link_to 'Item Type', new_itype_path %>
+  </div>
+  <div class="field">
+    <%= f.label :stockable %><br />
+    <%= f.check_box :stockable %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

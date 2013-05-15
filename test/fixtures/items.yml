@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  serial: MyString
+  site_id: 
+  location_id: 
+  stockable: false
+  itype_id: 
+
+two:
+  serial: MyString
+  site_id: 
+  location_id: 
+  stockable: false
+  itype_id: 

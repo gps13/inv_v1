@@ -1,0 +1,31 @@
+<h1>Listing items</h1>
+
+<table>
+  <tr>
+    <th>Serial</th>
+    <th>Site</th>
+    <th>Location</th>
+    <th>Stockable</th>
+    <th>Itype</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.serial %></td>
+    <td><%= item.site.name %></td>
+    <td><%= item.location.name %></td>
+    <td><%= item.stockable %></td>
+    <td><%= item.itype.name %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>
