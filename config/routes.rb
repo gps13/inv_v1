@@ -1,4 +1,6 @@
 Assetmanagement::Application.routes.draw do
+  get "users/new"
+
   # get "static_pages/home"
   match 'static_pages/home', to: 'static_pages#home'
 
@@ -10,6 +12,8 @@ Assetmanagement::Application.routes.draw do
 
   # get "static_pages/contact"
   match '/contact', to: 'static_pages#contact'
+
+  match '/signup',  to: 'users#new'
 
   resources :itypes
 
