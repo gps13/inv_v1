@@ -1,0 +1,111 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+
+/* $lightGray: #999; ==> Because variable names such as $lightGray are more descriptive
+than #999, it’s often useful to define variables even for values that aren’t repeated.
+Indeed, the Bootstrap framework defines a large number of variables for colors, available
+online on the Bootstrap page of LESS variables. That page defines variables using LESS,
+not Sass, but the bootstrap-sass gem provides the Sass equivalents. It is not difficult
+to guess the correspondence; where LESS uses an “at” sign @, Sass uses a dollar sign
+$. Looking the Bootstrap variable page, we see that there is a variable for light gray:
+ @grayLight: #999; */
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  } 
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white; /* #fff */
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+    &:hover {
+    color: $grayLight;
+    text-decoration: none;
+            }
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+    a {
+      color: $gray; /* #555 */
+      &:hover { 
+        color: $grayDarker; /* #222 */
+    	}
+  	}  
+  	small {
+      float: left;
+    }
+    ul {
+      float: right;
+      list-style: none;
+      li {
+        float: left;
+        margin-left: 10px;
+      }
+    }
+}
